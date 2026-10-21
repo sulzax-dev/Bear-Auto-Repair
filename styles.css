@@ -1,0 +1,141 @@
+/* Bear Auto Repair - Prescott, AZ Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap');
+
+:root {
+  --primary: #f59e0b;
+  --primary-dark: #b45309;
+  --primary-light: #fbbf24;
+  --bg-dark: #0a0d14;
+  --bg-card: #111726;
+  --border-gold: rgba(245, 158, 11, 0.25);
+  --gold-glow: 0 0 25px rgba(245, 158, 11, 0.35);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-dark);
+  color: #e2e8f0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.font-heading {
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.font-bebas {
+  font-family: 'Bebas Neue', cursive;
+  letter-spacing: 0.05em;
+}
+
+/* Custom Glassmorphism */
+.glass-panel {
+  background: rgba(17, 24, 39, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(245, 158, 11, 0.18);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 12px 30px -10px rgba(245, 158, 11, 0.25);
+}
+
+/* Glowing Elements */
+.gold-glow {
+  box-shadow: var(--gold-glow);
+}
+
+.text-glow {
+  text-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+}
+
+.border-glow {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #090c13;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a3449;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Animated Gradient Gradients */
+.gradient-border {
+  position: relative;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), rgba(217, 119, 6, 0.1), rgba(245, 158, 11, 0.4));
+  padding: 1px;
+  border-radius: 1rem;
+}
+
+.gradient-border-inner {
+  background: #101624;
+  border-radius: calc(1rem - 1px);
+}
+
+/* Pulse badge */
+@keyframes pulse-gold {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.15);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-gold 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Review Card subtle quote mark */
+.quote-watermark {
+  position: absolute;
+  right: 1.5rem;
+  top: 1rem;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(245, 158, 11, 0.06);
+  font-family: serif;
+  pointer-events: none;
+}
+
+/* Lightbox Modal Animation */
+#lightboxModal.open {
+  display: flex !important;
+  animation: fadeIn 0.25s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Micro animations */
+.transition-smooth {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
